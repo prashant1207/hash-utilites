@@ -1,8 +1,12 @@
 const crypto = require('crypto');
+var method = hashUtilites.prototype;
 
-module.exports = hashUtilites;
 
-function getHashSHA256Hex(text) {
+function hashUtilites() {
+
+}
+
+method.getHashSHA256Hex = function (text) {
     try {
         var hash = crypto.createHash('sha256').update(text, 'utf8').digest('hex');
         return hash;
@@ -14,7 +18,7 @@ function getHashSHA256Hex(text) {
 
 }
 
-function getHashSHA256Base64(text) {
+method.getHashSHA256Base64 = function (text) {
     try {
         var hash = crypto.createHash('sha512').update(text, 'utf8').digest('base64');
         return hash;
@@ -25,7 +29,7 @@ function getHashSHA256Base64(text) {
     }
 }
 
-function getHashMD5Hex(text) {
+method.getHashMD5Hex = function (text) {
     try {
         var hash = crypto.createHash('md5').update(text, 'utf8').digest('hex');
         return hash;
@@ -36,7 +40,7 @@ function getHashMD5Hex(text) {
     }
 }
 
-function getHashMD5Base64(text) {
+method.getHashMD5Base64 = function (text) {
     try {
         var hash = crypto.createHash('md5').update(text, 'utf8').digest('base64');
         return hash;
@@ -47,7 +51,7 @@ function getHashMD5Base64(text) {
     }
 }
 
-function getHashSHA1Hex(text) {
+method.getHashSHA1Hex = function (text) {
     try {
         var hash = crypto.createHash('sha1').update(text, 'utf8').digest('hex');
         return hash;
@@ -58,7 +62,7 @@ function getHashSHA1Hex(text) {
     }
 }
 
-function getHashSHA1Base64(text) {
+method.getHashSHA1Base64 = function (text) {
     try {
         var hash = crypto.createHash('sha1').update(text, 'utf8').digest('base64');
         return hash;
@@ -69,7 +73,7 @@ function getHashSHA1Base64(text) {
     }
 }
 
-function getHashSHA384Hex(text) {
+method.getHashSHA384Hex = function (text) {
     try {
         var hash = crypto.createHash('sha384').update(text, 'utf8').digest('hex');
         return hash;
@@ -80,7 +84,7 @@ function getHashSHA384Hex(text) {
     }
 }
 
-function getHashSHA384Base64(text) {
+method.getHashSHA384Base64 = function (text) {
     try {
         var hash = crypto.createHash('sha384').update(text, 'utf8').digest('base64');
         return hash;
@@ -91,7 +95,7 @@ function getHashSHA384Base64(text) {
     }
 }
 
-function getHashSHAHex(text) {
+method.getHashSHAHex = function (text) {
     try {
         var hash = crypto.createHash('sha').update(text, 'utf8').digest('hex');
         return hash;
@@ -102,7 +106,7 @@ function getHashSHAHex(text) {
     }
 }
 
-function getHashSHABase64(text) {
+method.getHashSHABase64 = function (text) {
     try {
         var hash = crypto.createHash('sha').update(text, 'utf8').digest('base64');
         return hash;
@@ -112,3 +116,5 @@ function getHashSHABase64(text) {
         return null;
     }
 }
+
+module.exports = hashUtilites;
